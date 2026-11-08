@@ -28,6 +28,15 @@ def test_inserir(lista):
     lista.inserir(1, 15)
     assert str(lista) == "40 -> 15 -> 30 -> 20 -> 10 -> null"
 
+def test_remover_inicio(lista):
+    lista.remover_inicio()
+    assert str(lista) == "30 -> 20 -> 10 -> null"
+
+def test_remover(lista):
+    # lista.remover(0)
+    # assert str(lista) == "30 -> 20 -> 10 -> null"
+    lista.remover(1)
+    assert str(lista) == "40 -> 20 -> 10 -> null"
 
 if __name__ == "__main__":
     pytest.main(["-v"])

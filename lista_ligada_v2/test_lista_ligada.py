@@ -38,5 +38,9 @@ def test_remover(lista):
     lista.remover(1)
     assert str(lista) == "40 -> 20 -> 10 -> null"
 
+def test_remover_item(lista):
+    lista.remover_item(40)
+    assert str(lista) == "30 -> 20 -> 10 -> null"
+
 if __name__ == "__main__":
     pytest.main(["-v"])

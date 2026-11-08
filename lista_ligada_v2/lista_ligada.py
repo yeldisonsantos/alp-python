@@ -101,7 +101,14 @@ class ListaLigada:
     def remover_inicio(self):
         """ Remove o primeiro item da lista e o retorna """
 
-        pass        
+        if self.primeiro is None:
+            return None
+        
+        atual = self.primeiro
+        self.primeiro = atual.proximo
+        self.tamanho -= 1
+
+        return atual.item
 
 
     def remover(self, posicao):
@@ -109,8 +116,27 @@ class ListaLigada:
         e puxa os demais itens para o início da lista.
         Ao final, retorna True. Caso a posição não exista na lista, retorna False. """
 
-        pass
+        if not 0 <= posicao < self.tamanho:
+            return False
 
+        if posicao == 0:
+            atual = self.primeiro
+            self.primeiro = atual.proximo
+        else:
+            antigo = self.primeiro
+            atual = self.primeiro
+            contador = 0
+            
+            while contador < posicao:
+                atual = atual.proximo
+                contador += 1
+
+                if posicao == contador:
+                    antigo.proximo = atual.proximo
+                antigo = atual
+
+        self.tamanho -= 1
+        return True
 
     def remover_item(self, item):
         """ Remove um item existente na lista e retorna True.

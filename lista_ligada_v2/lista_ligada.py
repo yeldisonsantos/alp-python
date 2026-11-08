@@ -52,6 +52,7 @@ class ListaLigada:
             if atual.item == item:
                 return True
             atual = atual.proximo
+            
         return False
 
 
@@ -67,6 +68,7 @@ class ListaLigada:
         while contador < posicao:
             atual = atual.proximo
             contador += 1
+            
         return atual.item
 
 
@@ -86,15 +88,13 @@ class ListaLigada:
         else:
             atual = self.primeiro
             contador = 0
-
             while contador < posicao - 1:
                 atual = atual.proximo
                 contador += 1
-
             novo_no.proximo = atual.proximo
             atual.proximo = novo_no
-
         self.tamanho += 1
+
         return True
 
 
@@ -123,23 +123,34 @@ class ListaLigada:
             atual = self.primeiro
             self.primeiro = atual.proximo
         else:
-            antigo = self.primeiro
-            atual = self.primeiro
-            contador = 0
-            
+            anterior = self.primeiro
+            atual = self.primeiro.proximo
+            contador = 1
             while contador < posicao:
+                anterior = atual
                 atual = atual.proximo
                 contador += 1
-
-                if posicao == contador:
-                    antigo.proximo = atual.proximo
-                antigo = atual
-
+            anterior.proximo = atual.proximo
         self.tamanho -= 1
+
         return True
 
     def remover_item(self, item):
         """ Remove um item existente na lista e retorna True.
         Caso o item não seja encontrado, retorna False. """
 
-        pass
+        atual = self.primeiro
+        anterior = None
+
+        while atual:
+            if atual.item == item:
+                if anterior is None:
+                    self.primeiro = atual.proximo
+                else:
+                    anterior.proximo = atual.proximo
+                self.tamanho -= 1
+                return True
+            anterior = atual
+            atual = atual.proximo
+
+        return False

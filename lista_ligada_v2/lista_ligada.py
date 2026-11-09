@@ -8,7 +8,12 @@ class ListaLigada:
 
 
     def inserir_inicio(self, item):
-        """ Adiciona no início da lista """
+        """ Adiciona no início da lista 
+        
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso:  O(1)
+        """
         
         novo_no = No(item)
         novo_no.proximo = self.primeiro
@@ -17,7 +22,12 @@ class ListaLigada:
 
 
     def __str__(self):
-        """ Monta uma string com os itens da lista """
+        """ Monta uma string com os itens da lista 
+        
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
 
         no_atual = self.primeiro
         string = ""
@@ -30,7 +40,12 @@ class ListaLigada:
 
 
     def adicionar(self, item):
-        """ Adiciona no fim da lista """
+        """ Adiciona no fim da lista 
+        
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
 
         novo_no = No(item)
         if self.primeiro is None:
@@ -45,7 +60,12 @@ class ListaLigada:
 
     def pesquisar(self, item):
         """ Retorna True caso o item procurado exista na lista e
-        False, em caso contrário. """
+        False, em caso contrário. 
+
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
     
         atual = self.primeiro
         while atual:
@@ -58,7 +78,12 @@ class ListaLigada:
 
     def obter(self, posicao):
         """ Retorna o item guardado em uma determinada posição da lista.
-        Caso a posição não exista na lista, retorna None. """
+        Caso a posição não exista na lista, retorna None. 
+
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
 
         if not 0 <= posicao < self.tamanho:
             return None
@@ -75,7 +100,12 @@ class ListaLigada:
     def inserir(self, posicao, item):
         """ Adiciona um item em uma posição da lista
         empurrando os demais itens para o fim da lista.
-        Se a posição não é válida, retorna False. """
+        Se a posição não é válida, retorna False.
+
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
 
         if not 0 <= posicao <= self.tamanho:
             return False
@@ -99,7 +129,12 @@ class ListaLigada:
 
 
     def remover_inicio(self):
-        """ Remove o primeiro item da lista e o retorna """
+        """ Remove o primeiro item da lista e o retorna 
+
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(1)
+        """
 
         if self.primeiro is None:
             return None
@@ -114,7 +149,12 @@ class ListaLigada:
     def remover(self, posicao):
         """ Remove um item de uma posição da lista
         e puxa os demais itens para o início da lista.
-        Ao final, retorna True. Caso a posição não exista na lista, retorna False. """
+        Ao final, retorna True. Caso a posição não exista na lista, retorna False. 
+        
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
 
         if not 0 <= posicao < self.tamanho:
             return False
@@ -137,7 +177,12 @@ class ListaLigada:
 
     def remover_item(self, item):
         """ Remove um item existente na lista e retorna True.
-        Caso o item não seja encontrado, retorna False. """
+        Caso o item não seja encontrado, retorna False. 
+        
+        Complexidade:
+            Melhor caso: O(1)
+            Pior caso: O(n)
+        """
 
         atual = self.primeiro
         anterior = None

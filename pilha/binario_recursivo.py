@@ -4,4 +4,4 @@ def binario(numero):
   return binario(numero // 2)  + str(numero % 2)
 
 numero = int(input("Digite um número: "))
-print(f"Binário: {binario(numero}")
+print(f"Binário: {binario(numero)}")

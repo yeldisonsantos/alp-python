@@ -33,8 +33,6 @@ def test_remover_inicio(lista):
     assert str(lista) == "30 -> 20 -> 10 -> null"
 
 def test_remover(lista):
-    # lista.remover(0)
-    # assert str(lista) == "30 -> 20 -> 10 -> null"
     lista.remover(1)
     assert str(lista) == "40 -> 20 -> 10 -> null"
 

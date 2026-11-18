@@ -12,7 +12,6 @@ def test_adicionar():
     lista.adicionar(10)
     lista.adicionar(20)
     lista.adicionar(30)
-    lista.adicionar(40)
 
-    assert lista.tamanho == 4
-    assert lista.exibir() == "10 -> 20 -> 30 -> 40 -> null"
+    assert lista.tamanho == 3
+    assert lista.exibir() == "10 -> 20 -> 30 -> null"

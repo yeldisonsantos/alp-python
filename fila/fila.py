@@ -4,10 +4,10 @@ class Fila:
     def __init__(self):
         self._elementos = ListaLigada()
 
-    def empilhar(self, item):
+    def enfileirar(self, item):
         self._elementos.adicionar(item)
 
-    def desempilhar(self):
+    def desenfileirar(self):
         self._elementos.remover_inicio()
 
     def topo(self):
